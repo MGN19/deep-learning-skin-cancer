@@ -1,12 +1,12 @@
-# Skin Cancer Classification using Deep Learning
+# Skin Cancer Classification using Neural Networks
 
 ## Project Overview
-This project focuses on developing a deep-learning model for skin cancer classification using the HAM10000 dataset. The dataset contains images of skin lesions categorized into seven types of skin cancer. The goal is to build a model that can accurately classify unseen images while handling data imbalances and computational constraints.
+This project focused on developing a deep-learning model for skin cancer classification using the HAM10000 dataset. The dataset contains images of skin lesions categorized into seven types of skin cancer. The goal was to build a model that could classify unseen images while handling data imbalances and computational constraints.
 
 ## Dataset
-The dataset consists of 10,015 labeled images along with metadata, including:
+The dataset consists of 10 015 labeled images, including:
 - **Age**
-- **Gender**
+- **Sex**
 - **Location of the lesion**
 - **Diagnosis (dx)** (Target variable with seven classes):
   - Actinic keratoses and intraepithelial carcinoma / Bowen's disease (**akiec**)
@@ -20,14 +20,14 @@ The dataset consists of 10,015 labeled images along with metadata, including:
 ## Methodology
 ### Data Exploration
 - Analyzed metadata to identify missing values and class distribution.
-- Noted dataset imbalance, requiring the use of **f1-score** as a key evaluation metric.
+- Noted dataset imbalance, requiring the use of **f1-score** as evaluation metric.
 - Decided to use only images for training, excluding metadata.
 
 ### Image Preprocessing
 - Resized images from **600x450** to **150x112** to optimize computational efficiency.
 - Applied label encoding to the target variable.
 - Normalized pixel values to a range between **0 and 1**.
-- Converted images to grayscale and tested **hair removal techniques**.
+- Converted images to grayscale and tested hair removal techniques.
 - Applied sharpening and histogram equalization for contrast enhancement.
 - Due to suboptimal results, preprocessing was ultimately **not used** in the final model.
 
@@ -47,13 +47,12 @@ The dataset consists of 10,015 labeled images along with metadata, including:
 
 ### Model Evaluation
 - Used **stratified k-fold cross-validation** to handle class imbalance.
-- Achieved a weighted **f1-score of 0.74** and an accuracy of **75.42%**.
-- **Confusion matrix analysis** showed that the model performed well on common classes (e.g., 'nv') but struggled with rare ones (e.g., 'df').
+- Achieved a weighted **f1-score of 0.74**.
+- **Confusion matrix analysis** showed that the model performed well on majority classes (e.g., 'nv') but struggled with rare ones (e.g., 'df').
 
 ## Results & Conclusions
 - The final model achieved an f1-score of **0.74**.
 - The biggest challenge was **RAM limitations**, which forced resizing of images.
-- Future improvements could include **better class balancing techniques** and **transfer learning** with pre-trained models.
 
 ## Installation & Usage
 ### Prerequisites
@@ -65,23 +64,14 @@ The dataset consists of 10,015 labeled images along with metadata, including:
 ### Running the Model
 1. Clone this repository:
    ```sh
-   git clone https://github.com/yourusername/skin-cancer-classification.git
+   git clone https://github.com/MGN19/deep-learning-skin-cancer.git
    ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the notebooks in order:
-   - `01_data_exploration.ipynb`
-   - `02_basic_model.ipynb`
-   - `03_image_augmentation.ipynb`
-   - `04_image_preprocessing.ipynb`
-   - `05_grid_search.ipynb`
-   - `06_model_evaluation.ipynb`
+2. Run the notebooks in order:
+   - `1_Explore.ipynb`
+   - `2_ImagePreProcessing.ipynb`
+   - `3_Model.ipynb`
+   - `4_ImgGen.ipynb`
+   - `5_GridSearch.ipynb`
+  
 
-## References
-[1] Agyenta & Akanzawon, "Skin Lesion Classification Based on Convolutional Neural Network".
-
-## License
-This project is open-source and available under the MIT License.
 
