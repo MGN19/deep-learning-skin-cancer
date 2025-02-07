@@ -3,6 +3,8 @@
 ## 📌 Project Overview
 This project focused on developing a deep-learning model for skin cancer classification using the HAM10000 dataset. The dataset contains images of skin lesions categorized into seven types of skin cancer. The goal was to build a model that could classify unseen images while handling data imbalances and computational constraints.
 
+<br>
+
 ## 📂 Dataset Overview
 The dataset consists of 10 015 labeled images, including:
 - **Age**
@@ -17,12 +19,15 @@ The dataset consists of 10 015 labeled images, including:
   - Melanocytic nevi (**nv**)
   - Vascular lesions (**vasc**)
 
+<br>
 
 ## 🔬 Methodology
 ### 1️⃣ Data Exploration
 - Analyzed metadata to identify missing values and class distribution.
 - Noted dataset imbalance, requiring the use of **f1-score** as evaluation metric.
 - Decided to use only images for training, excluding metadata.
+
+<br>
 
 ### 2️⃣ Image Preprocessing
 - Resized images from **600x450** to **150x112** to optimize computational efficiency.
@@ -32,10 +37,14 @@ The dataset consists of 10 015 labeled images, including:
 - Applied sharpening and histogram equalization for contrast enhancement.
 - Due to suboptimal results, preprocessing was ultimately **not used** in the final model.
 
+<br>
+
 ### 3️⃣ Model Development
 - Implemented a **Convolutional Neural Network (CNN)** using TensorFlow/Keras.
 - Used **ImageDataGenerator** for data augmentation (rotation, flipping, shifting), but found no improvement in performance.
 - Employed **grid search** to optimize hyperparameters using **Keras Tuner - Hyperband**.
+
+<br>
 
 ### 4️⃣ Model Evaluation
 - Used **stratified k-fold cross-validation** to handle class imbalance.
@@ -50,6 +59,8 @@ The dataset consists of 10 015 labeled images, including:
   - **32 neurons, ReLU, Dropout (30%)**
 - **Final softmax layer** with 7 neurons for multi-class classification.
 - Optimized using **Adam optimizer** and **sparse_categorical_crossentropy loss**.
+
+<br>
 
 ## 🎯 Results & Challenges  
 
@@ -69,6 +80,7 @@ Class Imbalance: Rare categories impacted model accuracy.
 
 Preprocessing Trade-offs: Despite testing, preprocessing did not significantly improve results.  
 
+<br>
 
 ## ⚙️ Installation & Usage
 ### 🔧 Prerequisites
@@ -77,6 +89,7 @@ Preprocessing Trade-offs: Despite testing, preprocessing did not significantly i
 - NumPy, Pandas, Matplotlib, Seaborn, OpenCV
 - Sklearn (for label encoding and k-fold validation)
 
+<br>
 ### 🚀 Running the Model
 1. Clone this repository:
    ```sh
