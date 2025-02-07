@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 This project focused on developing a deep-learning model for skin cancer classification using the HAM10000 dataset. The dataset contains images of skin lesions categorized into seven types of skin cancer. The goal was to build a model that could classify unseen images while handling data imbalances and computational constraints.
 
-This was a **group project** developed as part of the **Deep Learning course**.
+This was a **group project** developed as part of the **Deep Learning** course.
 
 <br>
 
