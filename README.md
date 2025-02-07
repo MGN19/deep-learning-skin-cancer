@@ -59,6 +59,7 @@ The model achieved an F1-score of 0.74.
 
 Successfully optimized a deep-learning model despite limited resources.
 
+
 ❌ Challenges Faced
 
 Computational Limitations: Required image resizing due to RAM constraints.
@@ -66,6 +67,7 @@ Computational Limitations: Required image resizing due to RAM constraints.
 Class Imbalance: Rare categories impacted model accuracy.
 
 Preprocessing Trade-offs: Despite testing, preprocessing did not significantly improve results.
+
 
 ## ⚙️ Installation & Usage
 ### 🔧 Prerequisites
