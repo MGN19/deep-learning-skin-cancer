@@ -104,6 +104,14 @@ Preprocessing Trade-offs: Despite testing, preprocessing did not significantly i
    - `3_Model.ipynb`
    - `4_ImgGen.ipynb`
    - `5_GridSearch.ipynb`
-  
 
+  
+📚 Lessons Learned & Future Improvements
+
+As this was our first time working on an image classification task, we gained valuable insights throughout the process. With additional experience, I have identified areas where improvements could be made:
+
+- More In-Depth Data Exploration: While we performed initial exploratory analysis, a more detailed investigation into feature distributions, correlations, and additional metadata insights could have provided stronger insights.
+- Data Leakage in Preprocessing: Preprocessing (such as image normalization and transformations) was applied before splitting the data into training and validation sets. This led to data leakage, as preprocessing should be applied after the split.
+- Additional Preprocessing Techniques: Although several preprocessing techniques were tested, more advanced methods (such as advanced augmentation, denoising, or color space transformations) could have been explored further.
+- Data Leakage in Hyperparameter Tuning: During hyperparameter tuning, data leakage occurred as the validation data was not properly separated. Using sklearn’s PredefinedSplit before the grid search would have been a better approach to ensure that validation data remained truly unseen during hyperparameter tuning.
 
