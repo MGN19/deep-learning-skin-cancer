@@ -59,6 +59,7 @@ The model achieved an F1-score of 0.74.
 
 Successfully optimized a deep-learning model despite limited resources.  
 
+<br>
 
 ❌ Challenges Faced  
 
