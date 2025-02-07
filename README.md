@@ -1,9 +1,9 @@
 # Skin Cancer Classification using Neural Networks
 
-## Project Overview
+## 📌 Project Overview
 This project focused on developing a deep-learning model for skin cancer classification using the HAM10000 dataset. The dataset contains images of skin lesions categorized into seven types of skin cancer. The goal was to build a model that could classify unseen images while handling data imbalances and computational constraints.
 
-## Dataset
+## 📂 Dataset Overview
 The dataset consists of 10 015 labeled images, including:
 - **Age**
 - **Sex**
@@ -17,13 +17,14 @@ The dataset consists of 10 015 labeled images, including:
   - Melanocytic nevi (**nv**)
   - Vascular lesions (**vasc**)
 
-## Methodology
-### Data Exploration
+
+## 🔬 Methodology
+### 1️⃣ Data Exploration
 - Analyzed metadata to identify missing values and class distribution.
 - Noted dataset imbalance, requiring the use of **f1-score** as evaluation metric.
 - Decided to use only images for training, excluding metadata.
 
-### Image Preprocessing
+### 2️⃣ Image Preprocessing
 - Resized images from **600x450** to **150x112** to optimize computational efficiency.
 - Applied label encoding to the target variable.
 - Normalized pixel values to a range between **0 and 1**.
@@ -31,12 +32,17 @@ The dataset consists of 10 015 labeled images, including:
 - Applied sharpening and histogram equalization for contrast enhancement.
 - Due to suboptimal results, preprocessing was ultimately **not used** in the final model.
 
-### Model Development
+### 3️⃣ Model Development
 - Implemented a **Convolutional Neural Network (CNN)** using TensorFlow/Keras.
 - Used **ImageDataGenerator** for data augmentation (rotation, flipping, shifting), but found no improvement in performance.
 - Employed **grid search** to optimize hyperparameters using **Keras Tuner - Hyperband**.
 
-### Best CNN Model Structure
+### 4️⃣ Model Evaluation
+- Used **stratified k-fold cross-validation** to handle class imbalance.
+- Achieved a weighted **f1-score of 0.74**.
+- **Confusion matrix analysis** showed that the model performed well on majority classes (e.g., 'nv') but struggled with rare ones (e.g., 'df').
+
+### 🔥 Best CNN Model Architecture
 - **3 Convolutional layers** (20, 60, 80 filters) with ReLU activation and max pooling.
 - Flattened the output and added **3 dense layers**:
   - **352 neurons, ReLU, Dropout (30%)**
@@ -45,23 +51,30 @@ The dataset consists of 10 015 labeled images, including:
 - **Final softmax layer** with 7 neurons for multi-class classification.
 - Optimized using **Adam optimizer** and **sparse_categorical_crossentropy loss**.
 
-### Model Evaluation
-- Used **stratified k-fold cross-validation** to handle class imbalance.
-- Achieved a weighted **f1-score of 0.74**.
-- **Confusion matrix analysis** showed that the model performed well on majority classes (e.g., 'nv') but struggled with rare ones (e.g., 'df').
+## 🎯 Results & Challenges
 
-## Results & Conclusions
-- The final model achieved an f1-score of **0.74**.
-- The biggest challenge was **RAM limitations**, which forced resizing of images.
+✅ Key Achievements
 
-## Installation & Usage
-### Prerequisites
+The model achieved an F1-score of 0.74.
+
+Successfully optimized a deep-learning model despite limited resources.
+
+❌ Challenges Faced
+
+Computational Limitations: Required image resizing due to RAM constraints.
+
+Class Imbalance: Rare categories impacted model accuracy.
+
+Preprocessing Trade-offs: Despite testing, preprocessing did not significantly improve results.
+
+## ⚙️ Installation & Usage
+### 🔧 Prerequisites
 - Python 3.x
 - TensorFlow/Keras
 - NumPy, Pandas, Matplotlib, Seaborn, OpenCV
 - Sklearn (for label encoding and k-fold validation)
 
-### Running the Model
+### 🚀 Running the Model
 1. Clone this repository:
    ```sh
    git clone https://github.com/MGN19/deep-learning-skin-cancer.git
