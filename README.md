@@ -51,22 +51,22 @@ The dataset consists of 10 015 labeled images, including:
 - **Final softmax layer** with 7 neurons for multi-class classification.
 - Optimized using **Adam optimizer** and **sparse_categorical_crossentropy loss**.
 
-## 🎯 Results & Challenges
+## 🎯 Results & Challenges  
 
-✅ Key Achievements
+✅ Key Achievements  
 
-The model achieved an F1-score of 0.74.
+The model achieved an F1-score of 0.74.  
 
-Successfully optimized a deep-learning model despite limited resources.
+Successfully optimized a deep-learning model despite limited resources.  
 
 
-❌ Challenges Faced
+❌ Challenges Faced  
 
-Computational Limitations: Required image resizing due to RAM constraints.
+Computational Limitations: Required image resizing due to RAM constraints.  
 
-Class Imbalance: Rare categories impacted model accuracy.
+Class Imbalance: Rare categories impacted model accuracy.  
 
-Preprocessing Trade-offs: Despite testing, preprocessing did not significantly improve results.
+Preprocessing Trade-offs: Despite testing, preprocessing did not significantly improve results.  
 
 
 ## ⚙️ Installation & Usage
